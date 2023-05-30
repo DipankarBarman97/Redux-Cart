@@ -37,8 +37,8 @@ const Cart = () => {
         {cartItems.length > 0 ? (
           cartItems.map((i) => (
             <CartItem
-              imgSrc={i.imgSrc}
-              name={i.name}
+              image={i.image}
+              title={i.title}
               price={i.price}
               qty={i.quantity}
               id={i.id}
@@ -54,18 +54,18 @@ const Cart = () => {
       </main>
 
       <aside>
-        <h2>Subtotal: ${subTotal}</h2>
-        <h2>Shipping: ${shipping}</h2>
-        <h2>Tax: ${tax}</h2>
-        <h2>Total: ${total}</h2>
+        <h2>Subtotal: $ {subTotal}</h2>
+        <h2>Shipping: $ {shipping}</h2>
+        <h2>Tax: $ {tax}</h2>
+        <h2>Total: $ {total}</h2>
       </aside>
     </div>
   );
 };
 
 const CartItem = ({
-  imgSrc,
-  name,
+  image,
+  title,
   price,
   qty,
   decrement,
@@ -74,9 +74,9 @@ const CartItem = ({
   id,
 }) => (
   <div className="cartItem">
-    <img src={imgSrc} alt="Item" />
+    <img src={image} alt="Item" />
     <article>
-      <h3>{name}</h3>
+      <h3>{title}</h3>
       <p>${price}</p>
     </article>
 
